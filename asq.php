@@ -39,7 +39,7 @@ function tanya(){
     $result=curl_exec($ch);
     $json = json_decode($result, true);
     print "$red //$white Dibawah ini adalah pertanyaan yang dapat anda berikan :\n\n";
-    foreach ($json as $row){
+    foreach ((array) $json as $row){
         $soal = $row['title'];
         $link = $row['url'];
         print "$yellow    ->$white $soal\n";
